@@ -14,7 +14,16 @@ const server = http.createServer((req, res) =>{
     resultado = soma(Number(query.a), Number(query.b))
   } else if (pathname == '/subtracao'){
     resultado = subtracao(Number(query.a), Number(query.b))
+  } else if (pathname == '/subtracao'){
+    resultado = divisao (Number(query.a), Number(query.b))
+  } else if (pathname == '/subtracao'){
+    resultado = multiplicacao(Number(query.a), Number(query.b))
+  } else {
+    res.statusCode = 404
+    mensagem = 'pagina não encontrada'
   }
+  res.end(mensagem)
+
 })
 
 server.listen(PORT, ()=> {
