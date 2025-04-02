@@ -10,6 +10,11 @@ const server = http.createServer((req, res) =>{
     const {query} = urlCapturada
     let resultado = soma(Number(query.a), Number(query.b))
     res.end(`o valor final é ${resultado}`)
+  if(pathname == '/soma'){
+    resultado = soma(Number(query.a), Number(query.b))
+  } else if (pathname == '/subtracao'){
+    resultado = subtracao(Number(query.a), Number(query.b))
+  }
 })
 
 server.listen(PORT, ()=> {
